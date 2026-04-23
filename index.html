@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gabriel Ferreira de Castro — Página Pessoal</title>
+  <meta name="description" content="Atividade Prática 2 - GAC116/UFLA. Duas versões: Bootstrap e Materialize." />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+  <link rel="icon" href="bootstrap/assets/img/foto.svg" type="image/svg+xml" />
+  <style>
+    :root {
+      --bg: #0f1220;
+      --surface: #171a2b;
+      --surface-alt: #1d2238;
+      --text: #e7eaf3;
+      --muted: #a4acc2;
+      --border: #2a3050;
+      --accent: #8b87ff;
+      --accent-2: #ee6e73;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(139, 135, 255, 0.25), transparent 60%),
+        radial-gradient(900px 500px at 110% 10%, rgba(238, 110, 115, 0.22), transparent 60%),
+        var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", Roboto, system-ui, -apple-system, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      text-align: center;
+      padding: 3.5rem 1.25rem 1.5rem;
+    }
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid var(--surface);
+      box-shadow: 0 8px 24px rgba(0,0,0,.35);
+      margin-bottom: 1rem;
+    }
+    h1 { font-size: clamp(1.6rem, 3.4vw, 2.3rem); margin: 0 0 .25rem; }
+    .subtitle { color: var(--muted); margin: 0 0 .25rem; }
+    .tag {
+      display: inline-block;
+      font-size: .8rem;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: .25rem .6rem;
+      border-radius: 999px;
+      margin-top: .5rem;
+    }
+    main {
+      flex: 1;
+      display: grid;
+      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      max-width: 920px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1.25rem;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+      text-decoration: none;
+      color: inherit;
+      transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 14px 30px rgba(0,0,0,.35);
+    }
+    .card.alt:hover { border-color: var(--accent-2); }
+    .card .icon {
+      width: 52px; height: 52px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(139, 135, 255, .18);
+      color: var(--accent);
+      font-size: 1.4rem;
+    }
+    .card.alt .icon {
+      background: rgba(238, 110, 115, .16);
+      color: var(--accent-2);
+    }
+    .card h2 { margin: 0; font-size: 1.3rem; }
+    .card p { margin: 0; color: var(--muted); line-height: 1.5; }
+    .card .cta {
+      margin-top: .5rem;
+      font-weight: 600;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+    }
+    .card.alt .cta { color: var(--accent-2); }
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem 2rem;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    footer a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="bootstrap/assets/img/foto.svg" alt="Avatar de Gabriel Ferreira" class="avatar" />
+    <h1>Gabriel Ferreira de Castro</h1>
+    <p class="subtitle">Graduando em Ciência da Computação — UFLA · 7º período</p>
+    <span class="tag">Atividade Prática 2 — GAC116 / UFLA 2026-1</span>
+  </header>
+
+  <main>
+    <a href="bootstrap/" class="card">
+      <span class="icon"><i class="fa-brands fa-bootstrap"></i></span>
+      <h2>Versão Bootstrap</h2>
+      <p>Página pessoal construída com Bootstrap 5 — grid, componentes e utilitários.</p>
+      <span class="cta">Acessar <i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+    <a href="materialize/" class="card alt">
+      <span class="icon"><i class="fa-solid fa-m"></i></span>
+      <h2>Versão Materialize</h2>
+      <p>Mesmo conteúdo reescrito com Materialize CSS — segue Material Design.</p>
+      <span class="cta">Acessar <i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+  </main>
+
+  <footer>
+    <p>
+      Desenvolvido por Gabriel Ferreira ·
+      <a href="https://github.com/gabrelcastro" target="_blank" rel="noopener">GitHub</a>
+    </p>
+  </footer>
+</body>
+</html>

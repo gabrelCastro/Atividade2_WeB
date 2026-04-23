@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gabriel Ferreira de Castro — Materialize</title>
+  <meta name="description" content="Página pessoal de Gabriel Ferreira de Castro, graduando em Ciência da Computação pela UFLA. Versão Materialize CSS." />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="icon" href="assets/img/foto.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="nav-extended nav-wrapper">
+      <div class="container">
+        <a href="#topo" class="brand-logo"><i class="fa-solid fa-code"></i>&nbsp;Gabriel Ferreira</a>
+        <a href="#" data-target="mobileNav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#interesses">Interesses</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li>
+            <a href="#!" id="themeToggle" class="btn-flat theme-toggle" aria-label="Alternar tema">
+              <i class="fa-solid fa-moon" id="themeIcon"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <ul class="sidenav" id="mobileNav">
+      <li><a class="subheader">Navegação</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#interesses">Interesses</a></li>
+      <li><a href="#contato">Contato</a></li>
+      <li><div class="divider"></div></li>
+      <li>
+        <a href="#!" id="themeToggleMobile" class="theme-toggle">
+          <i class="fa-solid fa-moon" id="themeIconMobile"></i>&nbsp;Alternar tema
+        </a>
+      </li>
+    </ul>
+  </header>
+
+  <section id="topo" class="hero section">
+    <div class="container">
+      <div class="row valign-wrapper">
+        <div class="col s12 m4 center-align">
+          <img src="assets/img/foto.svg" alt="Avatar de Gabriel Ferreira" class="circle responsive-img hero-avatar z-depth-2" />
+        </div>
+        <div class="col s12 m8 center-align-on-small">
+          <h1 class="hero-title">Olá! Eu sou <span class="accent">Gabriel Ferreira de Castro</span></h1>
+          <p class="flow-text">Graduando em Ciência da Computação pela UFLA — 7º período</p>
+          <p>Interessado em desenvolvimento de software, banco de dados, DevOps, back-end e cloud.</p>
+          <div class="hero-buttons">
+            <a href="#contato" class="btn waves-effect waves-light accent-bg">
+              <i class="fa-solid fa-paper-plane left"></i>Entrar em contato
+            </a>
+            <a href="#projetos" class="btn-flat accent-text accent-border">
+              <i class="fa-solid fa-folder-open left"></i>Ver projetos
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+
+    <section id="sobre" class="section">
+      <div class="container">
+        <h2 class="section-title"><i class="fa-solid fa-user"></i>&nbsp;Sobre</h2>
+        <div class="row">
+          <div class="col s12 m8">
+            <p>
+              Sou estudante de Ciência da Computação na Universidade Federal de Lavras (UFLA), atualmente no 7º período.
+              Tenho foco em construir aplicações web robustas, explorando desde o back-end e banco de dados até práticas
+              de DevOps e cloud para entregar software confiável.
+            </p>
+            <p>
+              Gosto de transformar ideias em produtos que funcionam de verdade — prezo por código limpo,
+              automação e infraestrutura bem cuidada.
+            </p>
+          </div>
+          <div class="col s12 m4">
+            <div class="card surface-card">
+              <div class="card-content">
+                <span class="card-title"><i class="fa-solid fa-circle-info accent-text"></i>&nbsp;Informações rápidas</span>
+                <ul class="info-list">
+                  <li><i class="fa-solid fa-graduation-cap accent-text"></i>&nbsp;UFLA — Ciência da Computação</li>
+                  <li><i class="fa-solid fa-layer-group accent-text"></i>&nbsp;7º período</li>
+                  <li><i class="fa-solid fa-location-dot accent-text"></i>&nbsp;Lavras — MG</li>
+                  <li><i class="fa-solid fa-envelope accent-text"></i>&nbsp;ferreiragabriel589@gmail.com</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="habilidades" class="section bg-alt">
+      <div class="container">
+        <h2 class="section-title"><i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;Habilidades</h2>
+        <div class="row">
+          <div class="col s12 m6">
+            <h3 class="subtitle">Tecnologias</h3>
+            <div class="chips-wrapper">
+              <div class="chip accent-chip">JavaScript</div>
+              <div class="chip accent-chip">Node.js</div>
+              <div class="chip accent-chip">SQL</div>
+              <div class="chip accent-chip">Git</div>
+              <div class="chip accent-chip">Docker</div>
+              <div class="chip accent-chip">Linux</div>
+              <div class="chip accent-chip">CI/CD</div>
+              <div class="chip accent-chip">Cloud</div>
+            </div>
+          </div>
+          <div class="col s12 m6">
+            <h3 class="subtitle">Competências</h3>
+            <ul class="bullet-list">
+              <li>Desenvolvimento back-end e APIs REST</li>
+              <li>Modelagem de banco de dados relacional</li>
+              <li>Versionamento com Git e fluxo colaborativo</li>
+              <li>Automação de deploy e contêineres</li>
+              <li>Resolução de problemas e trabalho em equipe</li>
+            </ul>
+          </div>
+          <div class="col s12">
+            <h3 class="subtitle">Nível de familiaridade</h3>
+            <div class="skill">
+              <div class="skill-row"><span>Back-end / Node.js</span><span>85%</span></div>
+              <div class="progress"><div class="determinate" style="width:85%"></div></div>
+            </div>
+            <div class="skill">
+              <div class="skill-row"><span>Banco de Dados (SQL)</span><span>80%</span></div>
+              <div class="progress"><div class="determinate" style="width:80%"></div></div>
+            </div>
+            <div class="skill">
+              <div class="skill-row"><span>DevOps / Docker</span><span>70%</span></div>
+              <div class="progress"><div class="determinate" style="width:70%"></div></div>
+            </div>
+            <div class="skill">
+              <div class="skill-row"><span>Cloud</span><span>65%</span></div>
+              <div class="progress"><div class="determinate" style="width:65%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos" class="section">
+      <div class="container">
+        <h2 class="section-title"><i class="fa-solid fa-folder-open"></i>&nbsp;Projetos</h2>
+        <div class="row">
+          <div class="col s12 m6">
+            <div class="card surface-card hoverable">
+              <div class="card-content">
+                <span class="card-title"><i class="fa-solid fa-globe accent-text"></i>&nbsp;gabrel.tech</span>
+                <p>Meu site pessoal — vitrine de projetos, experimentos e conteúdos sobre desenvolvimento.</p>
+              </div>
+              <div class="card-action">
+                <a href="https://gabrel.tech" target="_blank" rel="noopener" class="accent-text">
+                  Acessar <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6">
+            <div class="card surface-card hoverable">
+              <div class="card-content">
+                <span class="card-title"><i class="fa-solid fa-scale-balanced accent-text"></i>&nbsp;Jurídica Jr. UFLA</span>
+                <p>Site institucional da Empresa Júnior de Direito da UFLA, onde contribuí como desenvolvedor.</p>
+              </div>
+              <div class="card-action">
+                <a href="https://juridicajunior.ufla.br/" target="_blank" rel="noopener" class="accent-text">
+                  Acessar <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="interesses" class="section bg-alt">
+      <div class="container">
+        <h2 class="section-title"><i class="fa-solid fa-lightbulb"></i>&nbsp;Interesses</h2>
+        <h3 class="subtitle">Atividades</h3>
+        <div class="row">
+          <div class="col s12 m6 l4">
+            <div class="card surface-card interest-card">
+              <div class="card-content center-align">
+                <i class="fa-solid fa-laptop-code fa-2x accent-text"></i>
+                <h4 class="interest-title">Desenvolvimento de Software</h4>
+                <p>Construção de aplicações web e APIs.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card surface-card interest-card">
+              <div class="card-content center-align">
+                <i class="fa-solid fa-database fa-2x accent-text"></i>
+                <h4 class="interest-title">Banco de Dados</h4>
+                <p>Modelagem, SQL e desempenho.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card surface-card interest-card">
+              <div class="card-content center-align">
+                <i class="fa-solid fa-gears fa-2x accent-text"></i>
+                <h4 class="interest-title">DevOps</h4>
+                <p>Automação, CI/CD e contêineres.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card surface-card interest-card">
+              <div class="card-content center-align">
+                <i class="fa-solid fa-server fa-2x accent-text"></i>
+                <h4 class="interest-title">Back-end</h4>
+                <p>APIs, autenticação e integrações.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card surface-card interest-card">
+              <div class="card-content center-align">
+                <i class="fa-solid fa-cloud fa-2x accent-text"></i>
+                <h4 class="interest-title">Cloud</h4>
+                <p>Infra em nuvem e deploy escalável.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="section">
+      <div class="container">
+        <h2 class="section-title"><i class="fa-solid fa-address-card"></i>&nbsp;Contato</h2>
+        <p>Sinta-se à vontade para entrar em contato pelos canais abaixo:</p>
+        <div class="row">
+          <div class="col s12 m4">
+            <a class="card surface-card contact-card" href="mailto:ferreiragabriel589@gmail.com">
+              <div class="card-content center-align">
+                <i class="fa-solid fa-envelope fa-2x accent-text"></i>
+                <h3 class="contact-title">E-mail</h3>
+                <p>ferreiragabriel589@gmail.com</p>
+              </div>
+            </a>
+          </div>
+          <div class="col s12 m4">
+            <a class="card surface-card contact-card" href="https://github.com/gabrelcastro" target="_blank" rel="noopener">
+              <div class="card-content center-align">
+                <i class="fa-brands fa-github fa-2x accent-text"></i>
+                <h3 class="contact-title">GitHub</h3>
+                <p>@gabrelcastro</p>
+              </div>
+            </a>
+          </div>
+          <div class="col s12 m4">
+            <a class="card surface-card contact-card" href="https://www.linkedin.com/in/gabriel-ferreira-30a855217/" target="_blank" rel="noopener">
+              <div class="card-content center-align">
+                <i class="fa-brands fa-linkedin fa-2x accent-text"></i>
+                <h3 class="contact-title">LinkedIn</h3>
+                <p>Gabriel Ferreira</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="page-footer">
+    <div class="container center-align">
+      <p>© 2026 Gabriel Ferreira de Castro</p>
+      <p class="footer-sub">
+        Atividade Prática 2 — GAC116 / UFLA 2026-1 · Versão <strong>Materialize CSS</strong> ·
+        <a href="../" class="accent-text">trocar versão</a>
+      </p>
+    </div>
+  </footer>
+
+  <button id="toTop" class="to-top" type="button" aria-label="Voltar ao topo" title="Voltar ao topo">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
