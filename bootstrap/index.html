@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-bs-theme="light" data-theme="light">
+<html lang="pt-BR" data-bs-theme="dark" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gabriel Ferreira de Castro — Bootstrap</title>
-  <meta name="description" content="Página pessoal de Gabriel Ferreira de Castro, graduando em Ciência da Computação pela UFLA. Versão Bootstrap." />
+  <title>gabrel~$ — Gabriel Ferreira · Bootstrap</title>
+  <meta name="description" content="Gabriel Ferreira de Castro — estudante de CC na UFLA, estagiário de desenvolvimento back-end na Equals. Versão Bootstrap." />
   <script>
     (function () {
       try {
         var t = localStorage.getItem('theme');
-        if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        if (!t) t = 'dark';
         document.documentElement.setAttribute('data-theme', t);
         document.documentElement.setAttribute('data-bs-theme', t);
       } catch (e) {}
@@ -18,6 +18,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" href="assets/img/foto.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
@@ -25,8 +28,8 @@
 
   <nav class="navbar navbar-expand-lg fixed-top shadow-sm" aria-label="Navegação principal">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#topo">
-        <i class="fa-solid fa-code me-2"></i>Gabriel Ferreira
+      <a class="navbar-brand mono fw-bold" href="#topo">
+        <span class="prompt">gabrel~$</span> <span class="brand-word">whoami</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
               aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menu">
@@ -34,13 +37,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
-          <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#interesses">Interesses</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+          <li class="nav-item"><a class="nav-link mono" href="#sobre">sobre<span class="us">_</span></a></li>
+          <li class="nav-item"><a class="nav-link mono" href="#habilidades">stack<span class="us">_</span></a></li>
+          <li class="nav-item"><a class="nav-link mono" href="#trajetoria">trajetória<span class="us">_</span></a></li>
+          <li class="nav-item"><a class="nav-link mono" href="#projetos">projetos<span class="us">_</span></a></li>
+          <li class="nav-item"><a class="nav-link mono" href="#interesses">interesses<span class="us">_</span></a></li>
+          <li class="nav-item"><a class="nav-link mono" href="#contato">contato<span class="us">_</span></a></li>
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-            <button id="themeToggle" class="btn btn-outline-primary btn-sm" type="button" aria-label="Alternar tema">
+            <button id="themeToggle" class="btn btn-outline-primary btn-sm mono" type="button" aria-label="Alternar tema">
               <i class="fa-solid fa-moon" id="themeIcon"></i>
               <span class="ms-1 d-lg-none">Alternar tema</span>
             </button>
@@ -53,16 +57,33 @@
   <header id="topo" class="hero py-5">
     <div class="container py-5">
       <div class="row align-items-center g-4">
-        <div class="col-md-4 text-center">
-          <img src="assets/img/foto.svg" alt="Avatar de Gabriel Ferreira" class="img-fluid rounded-circle shadow hero-avatar" />
+        <div class="col-md-7 order-2 order-md-1">
+          <p class="mono small accent-text mb-2">// graduando · 7º período · CC — UFLA</p>
+          <h1 class="display-5 fw-bold mb-3">Oi, eu sou o <span class="accent-text">Gabriel</span>.</h1>
+          <p class="lead mb-3">
+            Estudante de <strong>Ciência da Computação</strong> na UFLA e estagiário de <strong>desenvolvimento back-end na <a href="#trajetoria" class="accent-text">Equals</a></strong> — Gestão Financeira Inteligente.
+          </p>
+          <p class="mb-4">Curto conversar sobre back-end, arquitetura, Java e o que ando estudando.</p>
+          <div class="d-flex gap-2 flex-wrap">
+            <a href="#contato" class="btn btn-primary mono"><i class="fa-solid fa-terminal me-2"></i>vamos trocar uma ideia</a>
+            <a href="#projetos" class="btn btn-outline-primary mono">ver projetos <i class="fa-solid fa-arrow-right ms-1"></i></a>
+          </div>
         </div>
-        <div class="col-md-8 text-center text-md-start">
-          <h1 class="display-5 fw-bold mb-2">Olá! Eu sou <span class="text-primary">Gabriel Ferreira de Castro</span></h1>
-          <p class="lead mb-3">Graduando em Ciência da Computação pela UFLA — 7º período</p>
-          <p class="mb-4">Interessado em desenvolvimento de software, banco de dados, DevOps, back-end e cloud.</p>
-          <div class="d-flex gap-2 justify-content-center justify-content-md-start flex-wrap">
-            <a href="#contato" class="btn btn-primary"><i class="fa-solid fa-paper-plane me-2"></i>Entrar em contato</a>
-            <a href="#projetos" class="btn btn-outline-primary"><i class="fa-solid fa-folder-open me-2"></i>Ver projetos</a>
+        <div class="col-md-5 order-1 order-md-2">
+          <div class="terminal shadow-lg mx-auto">
+            <div class="terminal-bar">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="terminal-title mono">gabrel — zsh</span>
+            </div>
+            <div class="terminal-body mono">
+              <p><span class="prompt">gabrel~$</span> whoami</p>
+              <p class="out">gabriel ferreira de castro</p>
+              <p><span class="prompt">gabrel~$</span> cat role.txt</p>
+              <p class="out">estagiário backend @ equals</p>
+              <p><span class="prompt">gabrel~$</span> ls --stack</p>
+              <p class="out">java · spring · mongodb · jenkins · aws</p>
+              <p><span class="prompt">gabrel~$</span> <span class="caret">_</span></p>
+            </div>
           </div>
         </div>
       </div>
@@ -73,28 +94,35 @@
 
     <section id="sobre" class="py-5">
       <div class="container">
-        <h2 class="section-title mb-4"><i class="fa-solid fa-user me-2"></i>Sobre</h2>
+        <h2 class="section-title"><span class="mono">sobre</span><span class="us">_</span></h2>
         <div class="row g-4">
           <div class="col-lg-8">
             <p>
-              Sou estudante de Ciência da Computação na Universidade Federal de Lavras (UFLA), atualmente no 7º período.
-              Tenho foco em construir aplicações web robustas, explorando desde o back-end e banco de dados até práticas
-              de DevOps e cloud para entregar software confiável.
+              Sou de Lavras/MG e estou no 7º período de <strong>Ciência da Computação</strong> na UFLA, com previsão de
+              conclusão no começo de 2027. Atualmente trabalho como <strong>estagiário de desenvolvimento back-end na Equals</strong>
+              no time de pagamentos — migração para microsserviços, gestão de segredos, persistência NoSQL,
+              processamento de arquivos e pipelines no Jenkins.
             </p>
             <p>
-              Gosto de transformar ideias em produtos que funcionam de verdade — prezo por código limpo,
-              automação e infraestrutura bem cuidada.
+              Já passei por data engineering na <strong>Compass UOL</strong> (Python/Spark/AWS Glue), fui bolsista
+              <strong>Fapemig</strong> em uma ferramenta de avaliação de acessibilidade web (Laravel) e desenvolvi
+              back-end na <strong>Comp Júnior</strong>, a empresa júnior do curso.
+            </p>
+            <p class="mb-0">
+              Gosto de código que resolve problema de verdade: API bem pensada, banco bem modelado e deploy
+              que não acorda ninguém de madrugada.
             </p>
           </div>
           <div class="col-lg-4">
-            <div class="card h-100">
+            <div class="card info-card h-100">
               <div class="card-body">
-                <h3 class="h5 card-title"><i class="fa-solid fa-circle-info me-2 text-primary"></i>Informações rápidas</h3>
+                <h3 class="h5 card-title mono"><span class="prompt">$</span> cat info.txt</h3>
                 <ul class="list-unstyled mb-0 info-list">
-                  <li><i class="fa-solid fa-graduation-cap me-2 text-primary"></i>UFLA — Ciência da Computação</li>
-                  <li><i class="fa-solid fa-layer-group me-2 text-primary"></i>7º período</li>
-                  <li><i class="fa-solid fa-location-dot me-2 text-primary"></i>Lavras — MG</li>
-                  <li><i class="fa-solid fa-envelope me-2 text-primary"></i>ferreiragabriel589@gmail.com</li>
+                  <li><i class="fa-solid fa-graduation-cap me-2 accent-text"></i>UFLA — Ciência da Computação</li>
+                  <li><i class="fa-solid fa-layer-group me-2 accent-text"></i>7º período · conclusão 2027</li>
+                  <li><i class="fa-solid fa-briefcase me-2 accent-text"></i>Estágio back-end · Equals</li>
+                  <li><i class="fa-solid fa-location-dot me-2 accent-text"></i>Lavras — MG · Brasil</li>
+                  <li><i class="fa-solid fa-envelope me-2 accent-text"></i>ferreiragabriel589@gmail.com</li>
                 </ul>
               </div>
             </div>
@@ -105,88 +133,186 @@
 
     <section id="habilidades" class="py-5 bg-subtle">
       <div class="container">
-        <h2 class="section-title mb-4"><i class="fa-solid fa-screwdriver-wrench me-2"></i>Habilidades</h2>
+        <h2 class="section-title"><span class="mono">stack</span><span class="us">_</span></h2>
         <div class="row g-4">
           <div class="col-md-6">
-            <h3 class="h5 mb-3">Tecnologias</h3>
+            <h3 class="h5 mb-3 mono">// tecnologias</h3>
             <div class="d-flex flex-wrap gap-2">
-              <span class="badge rounded-pill text-bg-primary">JavaScript</span>
-              <span class="badge rounded-pill text-bg-primary">Node.js</span>
-              <span class="badge rounded-pill text-bg-primary">SQL</span>
-              <span class="badge rounded-pill text-bg-primary">Git</span>
-              <span class="badge rounded-pill text-bg-primary">Docker</span>
-              <span class="badge rounded-pill text-bg-primary">Linux</span>
-              <span class="badge rounded-pill text-bg-primary">CI/CD</span>
-              <span class="badge rounded-pill text-bg-primary">Cloud</span>
+              <span class="chip-tech">Java</span>
+              <span class="chip-tech">Spring</span>
+              <span class="chip-tech">MongoDB</span>
+              <span class="chip-tech">SQL</span>
+              <span class="chip-tech">Jenkins</span>
+              <span class="chip-tech">Docker</span>
+              <span class="chip-tech">Kubernetes</span>
+              <span class="chip-tech">AWS</span>
+              <span class="chip-tech">Python</span>
+              <span class="chip-tech">Spark</span>
+              <span class="chip-tech">Laravel</span>
+              <span class="chip-tech">JavaScript</span>
+              <span class="chip-tech">Express</span>
+              <span class="chip-tech">Sequelize</span>
+              <span class="chip-tech">Git</span>
+              <span class="chip-tech">Linux</span>
             </div>
           </div>
           <div class="col-md-6">
-            <h3 class="h5 mb-3">Competências</h3>
-            <ul class="mb-0">
-              <li>Desenvolvimento back-end e APIs REST</li>
-              <li>Modelagem de banco de dados relacional</li>
-              <li>Versionamento com Git e fluxo colaborativo</li>
-              <li>Automação de deploy e contêineres</li>
-              <li>Resolução de problemas e trabalho em equipe</li>
+            <h3 class="h5 mb-3 mono">// competências</h3>
+            <ul class="mb-0 bullet-soft">
+              <li>Back-end com Java/Spring e APIs REST</li>
+              <li>Microsserviços, mensageria e integrações</li>
+              <li>Modelagem relacional (SQL) e NoSQL (MongoDB)</li>
+              <li>Pipelines CI/CD no Jenkins e containers Docker</li>
+              <li>Nuvem AWS (EC2, S3, Lambda, Glue)</li>
+              <li>Scrum e fluxo colaborativo com Git</li>
             </ul>
           </div>
           <div class="col-12">
-            <h3 class="h5 mb-3">Nível de familiaridade</h3>
+            <h3 class="h5 mb-3 mono">// nível de familiaridade</h3>
             <div class="skill">
-              <div class="d-flex justify-content-between"><span>Back-end / Node.js</span><span>85%</span></div>
-              <div class="progress" role="progressbar" aria-label="Back-end" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar" style="width:85%"></div>
-              </div>
+              <div class="d-flex justify-content-between mono"><span>Java / Spring</span><span>85%</span></div>
+              <div class="progress" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width:85%"></div></div>
             </div>
             <div class="skill">
-              <div class="d-flex justify-content-between"><span>Banco de Dados (SQL)</span><span>80%</span></div>
-              <div class="progress" role="progressbar" aria-label="SQL" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar" style="width:80%"></div>
-              </div>
+              <div class="d-flex justify-content-between mono"><span>SQL / MongoDB</span><span>80%</span></div>
+              <div class="progress" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width:80%"></div></div>
             </div>
             <div class="skill">
-              <div class="d-flex justify-content-between"><span>DevOps / Docker</span><span>70%</span></div>
-              <div class="progress" role="progressbar" aria-label="DevOps" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar" style="width:70%"></div>
-              </div>
+              <div class="d-flex justify-content-between mono"><span>Jenkins / Docker</span><span>75%</span></div>
+              <div class="progress" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width:75%"></div></div>
             </div>
             <div class="skill">
-              <div class="d-flex justify-content-between"><span>Cloud</span><span>65%</span></div>
-              <div class="progress" role="progressbar" aria-label="Cloud" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar" style="width:65%"></div>
-              </div>
+              <div class="d-flex justify-content-between mono"><span>AWS (EC2, S3, Lambda, Glue)</span><span>70%</span></div>
+              <div class="progress" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width:70%"></div></div>
+            </div>
+            <div class="skill">
+              <div class="d-flex justify-content-between mono"><span>Python / Spark</span><span>65%</span></div>
+              <div class="progress" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width:65%"></div></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="projetos" class="py-5">
+    <section id="trajetoria" class="py-5">
       <div class="container">
-        <h2 class="section-title mb-4"><i class="fa-solid fa-folder-open me-2"></i>Projetos</h2>
+        <h2 class="section-title"><span class="mono">trajetória</span><span class="us">_</span></h2>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card card">
+              <div class="card-body">
+                <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-1">
+                  <h3 class="h5 mb-0">Estagiário de Desenvolvimento de Software</h3>
+                  <span class="badge text-bg-secondary mono">jul/2025 — atual</span>
+                </div>
+                <p class="mono accent-text mb-2">@ Equals — Gestão Financeira Inteligente</p>
+                <p class="mb-0">
+                  Time de pagamentos: migração para microsserviços, gestão de segredos, persistência NoSQL,
+                  processamento de arquivos e pipelines Jenkins. Stack Java/Spring.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card card">
+              <div class="card-body">
+                <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-1">
+                  <h3 class="h5 mb-0">Estagiário de Data Engineering</h3>
+                  <span class="badge text-bg-secondary mono">fev/2025 — jun/2025</span>
+                </div>
+                <p class="mono accent-text mb-2">@ Compass UOL</p>
+                <p class="mb-0">
+                  Desenvolvimento de ETLs com Python, Spark, SQL e AWS Glue ao longo de 8 sprints, em ambiente
+                  containerizado com Docker.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card card">
+              <div class="card-body">
+                <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-1">
+                  <h3 class="h5 mb-0">Bolsista de Iniciação Tecnológica</h3>
+                  <span class="badge text-bg-secondary mono">abr/2024 — jun/2025</span>
+                </div>
+                <p class="mono accent-text mb-2">@ Fapemig / UFLA</p>
+                <p class="mb-0">
+                  Ferramenta de avaliação de acessibilidade web (front-end e back-end em Laravel).
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card card">
+              <div class="card-body">
+                <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-1">
+                  <h3 class="h5 mb-0">Desenvolvedor Back-end</h3>
+                  <span class="badge text-bg-secondary mono">dez/2023 — dez/2024</span>
+                </div>
+                <p class="mono accent-text mb-2">@ Comp Júnior — Empresa Júnior de Computação / UFLA</p>
+                <p class="mb-0">
+                  Site institucional da Jurídica Jr. — JavaScript, Express e Sequelize, com fluxo Scrum.
+                </p>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="projetos" class="py-5 bg-subtle">
+      <div class="container">
+        <h2 class="section-title"><span class="mono">projetos</span><span class="us">_</span></h2>
         <div class="row g-4">
           <div class="col-md-6">
-            <div class="card h-100 shadow-sm">
+            <div class="card h-100 shadow-sm project-card">
               <div class="card-body">
-                <h3 class="h5 card-title"><i class="fa-solid fa-globe me-2 text-primary"></i>gabrel.tech</h3>
-                <p class="card-text">Meu site pessoal — vitrine de projetos, experimentos e conteúdos sobre desenvolvimento.</p>
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <i class="fa-solid fa-terminal accent-text"></i>
+                  <h3 class="h5 card-title mb-0">gabrel.tech</h3>
+                </div>
+                <p class="mono small mb-2">// site pessoal</p>
+                <p class="card-text">
+                  Meu site pessoal com bio, trajetória, portfólio e posts. Interface inspirada em terminal,
+                  apresentando o que ando estudando e construindo.
+                </p>
+                <div class="d-flex flex-wrap gap-1 mb-1">
+                  <span class="chip-tech small">Next.js</span>
+                  <span class="chip-tech small">TypeScript</span>
+                </div>
               </div>
               <div class="card-footer bg-transparent border-0">
-                <a href="https://gabrel.tech" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
-                  Acessar <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                <a href="https://gabrel.tech" target="_blank" rel="noopener" class="btn btn-sm btn-primary mono">
+                  acessar <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
                 </a>
               </div>
             </div>
           </div>
           <div class="col-md-6">
-            <div class="card h-100 shadow-sm">
+            <div class="card h-100 shadow-sm project-card">
               <div class="card-body">
-                <h3 class="h5 card-title"><i class="fa-solid fa-scale-balanced me-2 text-primary"></i>Jurídica Jr. UFLA</h3>
-                <p class="card-text">Site institucional da Empresa Júnior de Direito da UFLA, onde contribuí como desenvolvedor.</p>
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <i class="fa-solid fa-scale-balanced accent-text"></i>
+                  <h3 class="h5 card-title mb-0">Jurídica Jr. UFLA</h3>
+                </div>
+                <p class="mono small mb-2">// back-end — empresa júnior</p>
+                <p class="card-text">
+                  Site institucional da Empresa Júnior de Direito da UFLA. Contribuí no back-end como dev da
+                  Comp Júnior, em um fluxo Scrum.
+                </p>
+                <div class="d-flex flex-wrap gap-1 mb-1">
+                  <span class="chip-tech small">Express</span>
+                  <span class="chip-tech small">JavaScript</span>
+                  <span class="chip-tech small">Sequelize</span>
+                </div>
               </div>
               <div class="card-footer bg-transparent border-0">
-                <a href="https://juridicajunior.ufla.br/" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
-                  Acessar <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                <a href="https://juridicajunior.ufla.br/" target="_blank" rel="noopener" class="btn btn-sm btn-primary mono">
+                  acessar <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
                 </a>
               </div>
             </div>
@@ -195,60 +321,67 @@
       </div>
     </section>
 
-    <section id="interesses" class="py-5 bg-subtle">
+    <section id="interesses" class="py-5">
       <div class="container">
-        <h2 class="section-title mb-4"><i class="fa-solid fa-lightbulb me-2"></i>Interesses</h2>
-        <h3 class="h5 mb-3">Atividades</h3>
+        <h2 class="section-title"><span class="mono">interesses</span><span class="us">_</span></h2>
+        <p class="mono small accent-text mb-4">// o que me chama atenção hoje</p>
         <div class="row g-3">
           <div class="col-sm-6 col-lg-4">
-            <div class="card h-100"><div class="card-body">
-              <i class="fa-solid fa-laptop-code fa-2x text-primary mb-2"></i>
-              <h4 class="h6">Desenvolvimento de Software</h4>
-              <p class="small mb-0">Construção de aplicações web e APIs.</p>
+            <div class="card h-100 interest-card"><div class="card-body">
+              <i class="fa-solid fa-mug-hot fa-2x accent-text mb-2"></i>
+              <h4 class="h6">Back-end & Java</h4>
+              <p class="small mb-0">Spring, APIs bem modeladas e código legível.</p>
             </div></div>
           </div>
           <div class="col-sm-6 col-lg-4">
-            <div class="card h-100"><div class="card-body">
-              <i class="fa-solid fa-database fa-2x text-primary mb-2"></i>
-              <h4 class="h6">Banco de Dados</h4>
-              <p class="small mb-0">Modelagem, SQL e desempenho.</p>
+            <div class="card h-100 interest-card"><div class="card-body">
+              <i class="fa-solid fa-sitemap fa-2x accent-text mb-2"></i>
+              <h4 class="h6">Arquitetura & Microsserviços</h4>
+              <p class="small mb-0">Separação de responsabilidades e observabilidade.</p>
             </div></div>
           </div>
           <div class="col-sm-6 col-lg-4">
-            <div class="card h-100"><div class="card-body">
-              <i class="fa-solid fa-gears fa-2x text-primary mb-2"></i>
-              <h4 class="h6">DevOps</h4>
-              <p class="small mb-0">Automação, CI/CD e contêineres.</p>
+            <div class="card h-100 interest-card"><div class="card-body">
+              <i class="fa-solid fa-database fa-2x accent-text mb-2"></i>
+              <h4 class="h6">Bancos de Dados</h4>
+              <p class="small mb-0">SQL, modelagem e NoSQL (MongoDB).</p>
             </div></div>
           </div>
           <div class="col-sm-6 col-lg-4">
-            <div class="card h-100"><div class="card-body">
-              <i class="fa-solid fa-server fa-2x text-primary mb-2"></i>
-              <h4 class="h6">Back-end</h4>
-              <p class="small mb-0">APIs, autenticação e integrações.</p>
+            <div class="card h-100 interest-card"><div class="card-body">
+              <i class="fa-solid fa-gears fa-2x accent-text mb-2"></i>
+              <h4 class="h6">DevOps & CI/CD</h4>
+              <p class="small mb-0">Jenkins, Docker, Kubernetes — deploy sem drama.</p>
             </div></div>
           </div>
           <div class="col-sm-6 col-lg-4">
-            <div class="card h-100"><div class="card-body">
-              <i class="fa-solid fa-cloud fa-2x text-primary mb-2"></i>
-              <h4 class="h6">Cloud</h4>
-              <p class="small mb-0">Infra em nuvem e deploy escalável.</p>
+            <div class="card h-100 interest-card"><div class="card-body">
+              <i class="fa-solid fa-cloud fa-2x accent-text mb-2"></i>
+              <h4 class="h6">Cloud / AWS</h4>
+              <p class="small mb-0">EC2, S3, Lambda e Glue para dados.</p>
+            </div></div>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <div class="card h-100 interest-card"><div class="card-body">
+              <i class="fa-solid fa-chart-line fa-2x accent-text mb-2"></i>
+              <h4 class="h6">Data Engineering</h4>
+              <p class="small mb-0">Pipelines em Python/Spark para dados sérios.</p>
             </div></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contato" class="py-5">
+    <section id="contato" class="py-5 bg-subtle">
       <div class="container">
-        <h2 class="section-title mb-4"><i class="fa-solid fa-address-card me-2"></i>Contato</h2>
-        <p class="mb-4">Sinta-se à vontade para entrar em contato pelos canais abaixo:</p>
+        <h2 class="section-title"><span class="mono">contato</span><span class="us">_</span></h2>
+        <p class="mb-4">Bora <strong>trocar uma ideia</strong>? Escolhe o canal que preferir:</p>
         <div class="row g-3">
           <div class="col-md-4">
             <a class="contact-card card text-decoration-none h-100" href="mailto:ferreiragabriel589@gmail.com">
               <div class="card-body text-center">
-                <i class="fa-solid fa-envelope fa-2x text-primary mb-2"></i>
-                <h3 class="h6">E-mail</h3>
+                <i class="fa-solid fa-envelope fa-2x accent-text mb-2"></i>
+                <h3 class="h6 mono">email<span class="us">_</span></h3>
                 <p class="small mb-0">ferreiragabriel589@gmail.com</p>
               </div>
             </a>
@@ -256,8 +389,8 @@
           <div class="col-md-4">
             <a class="contact-card card text-decoration-none h-100" href="https://github.com/gabrelcastro" target="_blank" rel="noopener">
               <div class="card-body text-center">
-                <i class="fa-brands fa-github fa-2x text-primary mb-2"></i>
-                <h3 class="h6">GitHub</h3>
+                <i class="fa-brands fa-github fa-2x accent-text mb-2"></i>
+                <h3 class="h6 mono">github<span class="us">_</span></h3>
                 <p class="small mb-0">@gabrelcastro</p>
               </div>
             </a>
@@ -265,8 +398,8 @@
           <div class="col-md-4">
             <a class="contact-card card text-decoration-none h-100" href="https://www.linkedin.com/in/gabriel-ferreira-30a855217/" target="_blank" rel="noopener">
               <div class="card-body text-center">
-                <i class="fa-brands fa-linkedin fa-2x text-primary mb-2"></i>
-                <h3 class="h6">LinkedIn</h3>
+                <i class="fa-brands fa-linkedin fa-2x accent-text mb-2"></i>
+                <h3 class="h6 mono">linkedin<span class="us">_</span></h3>
                 <p class="small mb-0">Gabriel Ferreira</p>
               </div>
             </a>
@@ -279,8 +412,11 @@
 
   <footer class="py-4 text-center">
     <div class="container">
-      <p class="mb-1">© 2026 Gabriel Ferreira de Castro</p>
-      <p class="small mb-0">Atividade Prática 2 — GAC116 / UFLA 2026-1 · Versão <strong>Bootstrap 5</strong> · <a href="../">trocar versão</a></p>
+      <p class="mb-1 mono"><span class="prompt">gabrel~$</span> exit</p>
+      <p class="small mb-0">
+        © 2026 Gabriel Ferreira de Castro · Atividade Prática 2 — GAC116 / UFLA 2026-1 ·
+        versão <strong>Bootstrap 5</strong> · <a href="../" class="accent-text">trocar versão</a>
+      </p>
     </div>
   </footer>
 

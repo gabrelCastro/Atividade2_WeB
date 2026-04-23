@@ -3,66 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gabriel Ferreira de Castro — Página Pessoal</title>
-  <meta name="description" content="Atividade Prática 2 - GAC116/UFLA. Duas versões: Bootstrap e Materialize." />
+  <title>gabrel~$ — escolha sua versão</title>
+  <meta name="description" content="Atividade Prática 2 — GAC116/UFLA. Duas versões da página pessoal de Gabriel Ferreira: Bootstrap e Materialize." />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" href="bootstrap/assets/img/foto.svg" type="image/svg+xml" />
   <style>
     :root {
-      --bg: #0f1220;
-      --surface: #171a2b;
-      --surface-alt: #1d2238;
+      --bg: #0b0e17;
+      --surface: #121726;
+      --surface-alt: #171d2f;
       --text: #e7eaf3;
-      --muted: #a4acc2;
-      --border: #2a3050;
-      --accent: #8b87ff;
-      --accent-2: #ee6e73;
+      --muted: #9aa3bd;
+      --border: #232a44;
+      --accent-indigo: #8b87ff;
+      --accent-red: #ff8a8f;
+      --term-prompt: #7cf5b1;
     }
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; }
     body {
       min-height: 100vh;
       background:
-        radial-gradient(1200px 600px at 10% -10%, rgba(139, 135, 255, 0.25), transparent 60%),
-        radial-gradient(900px 500px at 110% 10%, rgba(238, 110, 115, 0.22), transparent 60%),
+        radial-gradient(1200px 600px at 10% -10%, rgba(139, 135, 255, 0.22), transparent 60%),
+        radial-gradient(900px 500px at 110% 10%, rgba(255, 138, 143, 0.18), transparent 60%),
         var(--bg);
       color: var(--text);
-      font-family: "Segoe UI", Roboto, system-ui, -apple-system, sans-serif;
+      font-family: "Inter", "Segoe UI", Roboto, system-ui, -apple-system, sans-serif;
       display: flex;
       flex-direction: column;
     }
+    .mono { font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace; }
+    .prompt { color: var(--term-prompt); }
+
     header {
       text-align: center;
-      padding: 3.5rem 1.25rem 1.5rem;
+      padding: 4rem 1.25rem 1rem;
     }
-    .avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 4px solid var(--surface);
-      box-shadow: 0 8px 24px rgba(0,0,0,.35);
-      margin-bottom: 1rem;
-    }
-    h1 { font-size: clamp(1.6rem, 3.4vw, 2.3rem); margin: 0 0 .25rem; }
-    .subtitle { color: var(--muted); margin: 0 0 .25rem; }
-    .tag {
+    header p.tag {
       display: inline-block;
       font-size: .8rem;
       color: var(--muted);
       background: var(--surface);
       border: 1px solid var(--border);
-      padding: .25rem .6rem;
+      padding: .3rem .7rem;
       border-radius: 999px;
-      margin-top: .5rem;
+      margin: 0 0 1rem;
     }
+    header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin: 0 0 .5rem;
+      font-weight: 700;
+    }
+    header h1 .accent { color: var(--accent-indigo); }
+    header .prompt-line {
+      font-size: 1rem;
+      color: var(--muted);
+      margin: 0 0 .25rem;
+    }
+    header .subtitle {
+      color: var(--muted);
+      margin: .5rem 0 0;
+      font-size: 1rem;
+    }
+    header .subtitle a { color: var(--accent-indigo); text-decoration: none; }
+    header .subtitle a:hover { text-decoration: underline; }
+
     main {
       flex: 1;
       display: grid;
       gap: 1.25rem;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       max-width: 920px;
       width: 100%;
-      margin: 1.5rem auto;
+      margin: 2rem auto;
       padding: 0 1.25rem;
     }
     .card {
@@ -76,74 +92,142 @@
       text-decoration: none;
       color: inherit;
       transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+      position: relative;
+      overflow: hidden;
     }
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: var(--accent);
-      box-shadow: 0 14px 30px rgba(0,0,0,.35);
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(139,135,255,.1), transparent 60%);
+      opacity: 0;
+      transition: opacity .15s ease;
+      pointer-events: none;
     }
-    .card.alt:hover { border-color: var(--accent-2); }
+    .card.alt::after {
+      background: linear-gradient(135deg, rgba(255,138,143,.12), transparent 60%);
+    }
+    .card:hover { transform: translateY(-4px); border-color: var(--accent-indigo); box-shadow: 0 14px 30px rgba(0,0,0,.35); }
+    .card.alt:hover { border-color: var(--accent-red); }
+    .card:hover::after { opacity: 1; }
+
+    .card .meta {
+      font-family: "JetBrains Mono", monospace;
+      font-size: .8rem;
+      color: var(--muted);
+      margin-bottom: .25rem;
+    }
     .card .icon {
-      width: 52px; height: 52px;
+      width: 54px; height: 54px;
       border-radius: 12px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       background: rgba(139, 135, 255, .18);
-      color: var(--accent);
-      font-size: 1.4rem;
+      color: var(--accent-indigo);
+      font-size: 1.55rem;
     }
     .card.alt .icon {
-      background: rgba(238, 110, 115, .16);
-      color: var(--accent-2);
+      background: rgba(255, 138, 143, .16);
+      color: var(--accent-red);
     }
-    .card h2 { margin: 0; font-size: 1.3rem; }
-    .card p { margin: 0; color: var(--muted); line-height: 1.5; }
+    .card h2 {
+      margin: 0;
+      font-size: 1.3rem;
+      font-family: "JetBrains Mono", monospace;
+    }
+    .card h2 .us { color: var(--accent-indigo); }
+    .card.alt h2 .us { color: var(--accent-red); }
+    .card p { margin: 0; color: var(--muted); line-height: 1.55; }
+    .card .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin-top: .25rem;
+    }
+    .card .tag-sm {
+      font-family: "JetBrains Mono", monospace;
+      font-size: .72rem;
+      padding: .18rem .5rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: var(--surface-alt);
+    }
     .card .cta {
-      margin-top: .5rem;
+      margin-top: auto;
+      font-family: "JetBrains Mono", monospace;
       font-weight: 600;
-      color: var(--accent);
+      color: var(--accent-indigo);
       display: inline-flex;
       align-items: center;
       gap: .4rem;
     }
-    .card.alt .cta { color: var(--accent-2); }
+    .card.alt .cta { color: var(--accent-red); }
+
     footer {
       text-align: center;
       padding: 1.5rem 1rem 2rem;
       color: var(--muted);
       font-size: .9rem;
     }
-    footer a { color: var(--accent); }
+    footer .prompt { font-family: "JetBrains Mono", monospace; }
+    footer a { color: var(--accent-indigo); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 500px) {
+      header { padding-top: 3rem; }
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="bootstrap/assets/img/foto.svg" alt="Avatar de Gabriel Ferreira" class="avatar" />
-    <h1>Gabriel Ferreira de Castro</h1>
-    <p class="subtitle">Graduando em Ciência da Computação — UFLA · 7º período</p>
-    <span class="tag">Atividade Prática 2 — GAC116 / UFLA 2026-1</span>
+    <p class="tag mono">Atividade Prática 2 — GAC116 / UFLA 2026-1</p>
+    <p class="prompt-line mono"><span class="prompt">gabrel~$</span> ls --versions</p>
+    <h1>Duas formas de ver a mesma <span class="accent">página</span>.</h1>
+    <p class="subtitle">
+      Escolhe o framework que você quer ver em ação — o conteúdo é o mesmo,
+      a implementação muda.
+      <br />
+      Gabriel Ferreira de Castro · CC/UFLA · <a href="https://gabrel.tech" target="_blank" rel="noopener">gabrel.tech</a>
+    </p>
   </header>
 
   <main>
     <a href="bootstrap/" class="card">
+      <p class="meta mono">// opção 1</p>
       <span class="icon"><i class="fa-brands fa-bootstrap"></i></span>
-      <h2>Versão Bootstrap</h2>
-      <p>Página pessoal construída com Bootstrap 5 — grid, componentes e utilitários.</p>
-      <span class="cta">Acessar <i class="fa-solid fa-arrow-right"></i></span>
+      <h2>bootstrap<span class="us">_</span></h2>
+      <p>Versão com Bootstrap 5 — sistema de grid, componentes e utilitários clássicos do framework.</p>
+      <div class="tags">
+        <span class="tag-sm">Bootstrap 5</span>
+        <span class="tag-sm">FontAwesome</span>
+        <span class="tag-sm">Dark/Light</span>
+      </div>
+      <span class="cta">entrar <i class="fa-solid fa-arrow-right"></i></span>
     </a>
     <a href="materialize/" class="card alt">
-      <span class="icon"><i class="fa-solid fa-m"></i></span>
-      <h2>Versão Materialize</h2>
-      <p>Mesmo conteúdo reescrito com Materialize CSS — segue Material Design.</p>
-      <span class="cta">Acessar <i class="fa-solid fa-arrow-right"></i></span>
+      <p class="meta mono">// opção 2</p>
+      <span class="icon"><i class="fa-solid fa-layer-group"></i></span>
+      <h2>materialize<span class="us">_</span></h2>
+      <p>Mesmo conteúdo reescrito com Materialize CSS — layout seguindo Material Design.</p>
+      <div class="tags">
+        <span class="tag-sm">Materialize</span>
+        <span class="tag-sm">FontAwesome</span>
+        <span class="tag-sm">Dark/Light</span>
+      </div>
+      <span class="cta">entrar <i class="fa-solid fa-arrow-right"></i></span>
     </a>
   </main>
 
   <footer>
+    <p class="prompt mono"><span class="prompt">gabrel~$</span> echo "feito por gabriel ferreira"</p>
     <p>
-      Desenvolvido por Gabriel Ferreira ·
-      <a href="https://github.com/gabrelcastro" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/gabrelcastro" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.linkedin.com/in/gabriel-ferreira-30a855217/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:ferreiragabriel589@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
     </p>
   </footer>
 </body>
